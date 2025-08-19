@@ -12,11 +12,12 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  position: relative; /* added so buttons position relative to viewport */
 }
 
 model-viewer {
   width: 100%;
-  height: 90%;
+  height: 100%; /* changed from 90% to 100% for full viewport */
   background-color: #ffffff;
   position: relative;
 }
