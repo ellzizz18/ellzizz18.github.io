@@ -12,17 +12,17 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  position: relative; /* added so buttons position relative to viewport */
+  position: relative; /* for absolute positioning */
 }
 
 model-viewer {
   width: 100%;
-  height: 100%; /* changed from 90% to 100% for full viewport */
+  height: 100%;
   background-color: #ffffff;
   position: relative;
 }
 
-/* Button styles (bottom center & rounded) */
+/* Model-select buttons: bottom center & rounded */
 .button-container {
   position: absolute;
   bottom: 10px;           /* move buttons to bottom */
@@ -50,7 +50,42 @@ button.model-select:hover {
   transform: translateY(-2px); /* subtle hover lift */
 }
 
-/* Existing progress + AR button styles remain the same */
+/* AR button: top center */
+#ar-button {
+  background-image: url(ar_icon.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 12px 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 10px; /* move to top */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 0px 16px 0px 40px;
+  font-family: Roboto Regular, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  color: #4285f4;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 18px;
+  border: 1px solid #DADCE0;
+  z-index: 1000; /* stay above model-viewer */
+}
+
+#ar-button:active {
+  background-color: #E8EAED;
+}
+
+#ar-button:focus {
+  outline: none;
+}
+
+#ar-button:focus-visible {
+  outline: 1px solid #4285f4;
+}
+
+/* Progress bar */
 .progress-bar {
   display: block;
   width: 33%;
@@ -80,39 +115,7 @@ button.model-select:hover {
   transition: width 0.3s;
 }
 
-#ar-button {
-  background-image: url(ar_icon.png);
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 12px 50%;
-  background-color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  bottom: 16px;
-  padding: 0px 16px 0px 40px;
-  font-family: Roboto Regular, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  color:#4285f4;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 18px;
-  border: 1px solid #DADCE0;
-}
-
-#ar-button:active {
-  background-color: #E8EAED;
-}
-
-#ar-button:focus {
-  outline: none;
-}
-
-#ar-button:focus-visible {
-  outline: 1px solid #4285f4;
-}
-
+/* Animations for AR prompt */
 @keyframes circle {
   from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
   to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
