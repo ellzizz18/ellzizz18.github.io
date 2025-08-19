@@ -18,12 +18,13 @@ model-viewer {
   width: 100%;
   height: 90%;
   background-color: #ffffff;
+  position: relative;
 }
 
-/* Button styles (updated: top center & rounded) */
+/* Button styles (bottom center & rounded) */
 .button-container {
   position: absolute;
-  top: 10px;
+  bottom: 10px;           /* move buttons to bottom */
   left: 50%;
   transform: translateX(-50%); /* center horizontally */
   display: flex;
