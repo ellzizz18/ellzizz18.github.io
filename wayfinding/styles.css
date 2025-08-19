@@ -20,24 +20,32 @@ model-viewer {
   background-color: #ffffff;
 }
 
-/* Button styles (new) */
+/* Button styles (updated: top center & rounded) */
 .button-container {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* center horizontally */
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px; /* space between buttons */
   z-index: 1000; /* ensures buttons stay above model-viewer */
 }
 
 button.model-select {
-  padding: 8px 14px;
-  background: white;
+  padding: 10px 20px;
+  background-color: #ffffff;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 20px; /* makes buttons rounded */
   cursor: pointer;
   font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+button.model-select:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px); /* subtle hover lift */
 }
 
 /* Existing progress + AR button styles remain the same */
