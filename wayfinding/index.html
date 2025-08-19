@@ -35,6 +35,14 @@
     const viewer = document.getElementById('modelViewer');
     viewer.setAttribute('src', `${modelName}.glb`);
     viewer.setAttribute('poster', `${modelName}.png`);
+
+        // Add ar-placement="wall" for specific models
+    if (['TypeA2', 'TypeA3', 'TypeB2'].includes(modelName)) {
+      viewer.setAttribute('ar-placement', 'wall');
+    } else {
+      viewer.removeAttribute('ar-placement');
+    }
+
   }
 </script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
