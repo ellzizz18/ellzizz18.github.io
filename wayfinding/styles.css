@@ -1,4 +1,5 @@
-:not(:defined) > * {
+/* FIXED: Only apply to <model-viewer>, not all elements */
+model-viewer:not(:defined) > * {
   display: none;
 }
 
@@ -19,7 +20,27 @@ model-viewer {
   background-color: #ffffff;
 }
 
+/* Button styles (new) */
+.button-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 1000; /* ensures buttons stay above model-viewer */
+}
 
+button.model-select {
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Existing progress + AR button styles remain the same */
 .progress-bar {
   display: block;
   width: 33%;
